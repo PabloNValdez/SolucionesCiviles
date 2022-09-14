@@ -1,2 +1,5 @@
-<router-outlet></router-outlet>
-<button class="btn btn-danger">SOLUCIONES CIVILES</button>
+<app-header *ngIf="showHeaderAndFooter" style="visibility:visible;"></app-header>
+<main >
+    <router-outlet></router-outlet>
+</main>
+<app-footer *ngIf="showHeaderAndFooter" class="footer-cus"></app-footer>
