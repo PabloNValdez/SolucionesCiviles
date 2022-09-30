@@ -54,3 +54,13 @@ h6 { font-size: 16px; color: black; }
 h6.regular { font-weight: 400; }
 h6.bold { font-weight: 700; }
 h6.black { font-weight: 900; }
+
+app-footer {
+    margin-top: auto;
+}
+
+app-root{
+    display: flex;
+    flex-direction:column;
+    min-height: 100vh;
+}

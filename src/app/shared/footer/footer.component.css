@@ -1,0 +1,41 @@
+.footerGeneralStyle {
+    margin-top: 20px;
+    background-color: black;
+    background-size: 80% 10%;
+    padding: 0px;
+    text-align: center;
+}
+
+.logo{
+    /* padding-top: 20%; */
+    /* margin-top: 20%; */
+    background-color: white;
+    height: 5em;
+}
+
+.socialMedia{
+    padding-top: 7%;
+}
+
+.adresses{
+    padding-top: 7%;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        padding-top: 1px;
+    }
+
+    .socialMedia{
+        padding-top: 1px;
+    }
+
+    .adresses{
+        padding-top: 0px;
+    }
+
+    .footerGeneralStyle{
+        height: 1%;
+    }
+    
+}
