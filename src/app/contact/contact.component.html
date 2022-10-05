@@ -1,0 +1,71 @@
+<!--************** Imagen Portada ***************--> 
+<div class="container-fluid pb-5 px-0">
+    <div class="row mx-0 text-center">
+        <div class="container-fluid thumbnail  px-0">
+            <img class="cover-img img-fluid" src="../../assets/img/Contacto.jpg" alt="portada">
+            <div class="caption">
+                <h2 class="titulo-portada">Consulta</h2>
+            </div>
+        </div>    
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-6 pb-5">
+            <div class="row text-center pb-5">
+                <h3>Información</h3>
+            </div>
+            <div class="row pb-5">
+                <h5>EMAIL</h5>
+                <h6>correo@gmail.com</h6>
+            </div>
+            <div class="row">
+                <h5>Teléfono</h5>
+                <h6>+54 379 4701370</h6>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="row text-center pb-5">
+                <h3>Dejanos tu consulta</h3>
+            </div>
+            <form [formGroup]="questionForm" (ngSubmit)="sendQuestion()">
+                <div *ngIf="showError" class="alert alert-danger" role="alert">
+                    <span [innerHTML]="errorMessage"></span>
+                </div>
+                <div class="row mb-3 justify-content-center mt-3">      
+                    <div class="col-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-bottom border-0 input-form shadow-none" id="inputName" formControlName="name" placeholder="Nombre"> 
+                        </div>                                       
+                    </div>
+                </div>
+                <div class="row mb-3 justify-content-center">
+                    <div class="col-10">
+                        <div class="input-group">
+                            <input type="email" class="form-control border-bottom border-0 input-form shadow-none" id="inputEmai" formControlName="email" placeholder="Email">
+                        </div>
+                        <span *ngIf="validateControl('email') && hasError('email', 'email')">Ingrese un email válido</span>
+                        <span *ngIf="validateControl('email') && hasError('email', 'required')">Debe ingresar el email</span>
+                    </div>
+                </div>
+                <div class="row mb-3 justify-content-center">
+                    <div class="col-10">
+                        <div class="input-group">
+                            <textarea class="form-control border-bottom border-0 input-form shadow-none" placeholder="Mensaje" id="inputMessage" rows="4" formControlName="message"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row justify-content-center pb-5 pt-5">
+                    <div class="d-grid  col-10">
+                        <button type="submit" class="btn btn-send justify-content-center" [disabled]="!questionForm.valid">Enviar Consulta</button>
+                    </div>
+                </div>    
+            </form> 
+        </div>  
+    </div>
+</div>
+
+

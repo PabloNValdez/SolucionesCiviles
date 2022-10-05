@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MaintenanceComponent } from './shared/maintenance/maintenance.component';
 import { NotFound404Component } from './shared/not-found404/not-found404.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'maintenance', component: MaintenanceComponent },
+  { path: 'contact', component: ContactComponent},
   { path: '**', component: NotFound404Component },
 ];
 
