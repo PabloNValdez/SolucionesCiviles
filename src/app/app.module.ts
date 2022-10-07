@@ -10,6 +10,7 @@ import { NotFound404Component } from './shared/not-found404/not-found404.compone
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { WorksComponent } from './works/works.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MaintenanceComponent,
     NotFound404Component,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    WorksComponent
   ],
   imports: [
     BrowserModule,

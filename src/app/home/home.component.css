@@ -1,0 +1,25 @@
+.thumbnail {
+    position: relative;
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+}
+
+.cover-img {
+    width: 1600px;
+    object-fit:cover;
+    height: 400px;
+}
+
+h2.titulo-portada{
+    color: rgb(255, 255, 255);
+    font-size: 5vw;
+}
+
+.bold{
+    color: rgb(122, 140, 155);
+}
