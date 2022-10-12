@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WorksComponent } from './works/works.component';
+import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { WorksComponent } from './works/works.component';
     BrowserModule,
     AppRoutingModule, 
     HttpClientModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgImageFullscreenViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
   }
 
   modifyHeaderAndFooter(location: any) {
-    console.log(location.url); 
+    // console.log(location.url); 
     if (location.url === '/maintenance') {
         this.showHeaderAndFooter = false;
     } else {
