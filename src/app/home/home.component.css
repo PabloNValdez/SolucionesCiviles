@@ -4,7 +4,7 @@
 
 .caption {
     position: absolute;
-    top: 75%;
+    top: 50%;
     left: 0;
     width: 100%;
 }
@@ -12,7 +12,7 @@
 .cover-img {
     width: 1600px;
     object-fit:cover;
-    height: 400px;
+    height: 600px;
 }
 
 h2.titulo-portada{
