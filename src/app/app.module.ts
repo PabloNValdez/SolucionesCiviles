@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WorksComponent } from './works/works.component';
 import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
     NotFound404Component,
     HomeComponent,
     ContactComponent,
-    WorksComponent
+    WorksComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
