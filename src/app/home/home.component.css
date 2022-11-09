@@ -39,6 +39,7 @@ h2.titulo-portada{
     height: 455px;
     background-color: rgb(232, 234, 236);
     border: 2px solid rgb(44, 171, 235);
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .tarjetas h5{
@@ -48,4 +49,25 @@ h2.titulo-portada{
 
 h3.bold{
     color: rgb(122, 140, 155);
+}
+
+.btn-send{
+    background-color: goldenrod;
+
+}
+.btn-send:hover:enabled{
+    background-color:rgb(238, 204, 118);;
+}
+
+textarea{
+    resize: none;
+    /* height: 130px; */
+  }
+
+.input-alert{
+    color: crimson;   
+}
+
+.contacto{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

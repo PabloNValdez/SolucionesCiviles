@@ -35,7 +35,7 @@
     <div class="container pb-4 pt-5">
        <div class="row d-flex justify-content-center">
             <div class="col-10 col-lg-4 d-flex justify-content-center pb-5">
-                <div class="col shadow tarjetas">
+                <div class="col tarjetas">
                     <h3 class="bold text-center pt-3">Misión</h3><br>
                     <div class="row d-flex justify-content-center">
                         <div class="col-10">
@@ -49,7 +49,7 @@
 
 
             <div class="col-10 col-lg-4 d-flex justify-content-center pb-5">
-                <div class="col shadow tarjetas ">
+                <div class="col tarjetas ">
                     <h3 class="bold text-center pt-3">Visión</h3><br>
                     <div class="row d-flex justify-content-center">
                         <div class="col-10">
@@ -63,7 +63,7 @@
 
 
             <div class="col-10 col-lg-4 d-flex justify-content-center pb-5">
-                <div class="col shadow tarjetas">
+                <div class="col tarjetas">
                     <h3 class="bold text-center pt-3">Compromiso</h3><br>
                     <div class="row d-flex justify-content-center">
                         <div class="col-10">
@@ -80,6 +80,58 @@
         </div>
     </div>
 
+    <!-- Contacto -->
+    <div class="container contacto pb-4">
+        <div class="row text-center">
+            <div class="col">
+                <h2 class="bold pt-5">Contáctanos</h2>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center pt-5">
+            <div class="col-12 col-lg-6">
+                <!-- <div class="row text-center pb-5 pt-5">
+                    <h3>Mensaje</h3>
+                </div> -->
+                <form [formGroup]="questionForm" (ngSubmit)="sendQuestion()">
+                    <!-- <div *ngIf="showError" class="alert alert-danger" role="alert">
+                        <span [innerHTML]="errorMessage"></span>
+                    </div> -->
+                    <div class="row mb-3 justify-content-center mt-3">      
+                        <div class="col-10">
+                            <div class="input-group">
+                                <input type="text" class="form-control border-bottom border-0 input-form shadow-none" id="inputName" formControlName="name" placeholder="Nombre"> 
+                            </div>  
+                            <span class="input-alert" *ngIf="validateControl('name') && hasError('name', 'required')">Debe ingresar el nombre</span>                                     
+                        </div>
+                    </div>
+                    <div class="row mb-3 justify-content-center">
+                        <div class="col-10">
+                            <div class="input-group">
+                                <input type="email" class="form-control border-bottom border-0 input-form shadow-none" id="inputEmai" formControlName="email" placeholder="Email">
+                            </div>
+                            <span class="input-alert" *ngIf="validateControl('email') && hasError('email', 'email')">Ingrese un email válido</span>
+                            <span class="input-alert" *ngIf="validateControl('email') && hasError('email', 'required')">Debe ingresar el email</span>
+                        </div>
+                    </div>
+                    <div class="row mb-3 justify-content-center">
+                        <div class="col-10">
+                            <div class="input-group">
+                                <textarea class="form-control border-bottom border-0 input-form shadow-none" placeholder="Mensaje" id="inputMessage" rows="4" formControlName="message"></textarea>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <div class="row justify-content-center pb-5 pt-5">
+                        <div class="d-grid  col-10">
+                            <button type="submit" class="btn btn-send justify-content-center" [disabled]="!questionForm.valid">Enviar mensaje</button>
+                        </div>
+                    </div>    
+                </form> 
+            </div>
+        </div>
+    </div><br>
+
     <div class="container-fluid pt-5 last-text">
         <div class="row d-flex justify-content-center">
             <div class="col-8 pb-4">
@@ -87,7 +139,7 @@
                 <p class="fs-2">Somos una empresa en continúa formación. Innovando, investigando y aplicando siempre las últimas técnicas constructivas.</p>
             </div>
         </div>
-    </div><br>
+    </div>
     
     
 

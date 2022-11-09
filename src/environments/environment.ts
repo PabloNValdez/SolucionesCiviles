@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   //apiUrl: 'https://localhost:7073'
-  apiUrl: 'https://www.solucionesapi.somee.com'
+  apiUrl: 'http://www.solucionescivilesapi.somee.com'
 };
 
 /*
