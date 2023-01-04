@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { WorksComponent } from './works/works.component';
 import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
 import { ProductsComponent } from './products/products.component';
+import { AdministradorComponent } from './administrador/administrador.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductsComponent } from './products/products.component';
     HomeComponent,
     ContactComponent,
     WorksComponent,
-    ProductsComponent
+    ProductsComponent,
+    AdministradorComponent
   ],
   imports: [
     BrowserModule,

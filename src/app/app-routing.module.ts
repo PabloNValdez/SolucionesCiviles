@@ -6,6 +6,7 @@ import { NotFound404Component } from './shared/not-found404/not-found404.compone
 import { ContactComponent } from './contact/contact.component';
 import { WorksComponent } from './works/works.component';
 import { ProductsComponent } from './products/products.component';
+import { AdministradorComponent } from './administrador/administrador.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'works', component: WorksComponent},
   { path: 'products', component: ProductsComponent},
+  { path: 'administrador', component: AdministradorComponent},
   { path: '**', component: NotFound404Component },
 ];
 
