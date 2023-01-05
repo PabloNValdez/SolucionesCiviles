@@ -1,7 +1,8 @@
 <div class="col-9">
-    <div class="row justify-content-left">
+    <div class="row justify-content-center">
+        <!----------------------------- INICIO DE SESIÓN ----------------------------------------->
         <div class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-            <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+            <form [formGroup]="loginForm" (ngSubmit)="loginUser()" *ngIf="!showData">
                 <div class="card">
                 
                     <h3 class="formTitle">Inicio de Sesión</h3>
@@ -12,8 +13,7 @@
                     <div class="row mb-3 justify-content-center">
                         <div class="col-sm-11">
                             <div class="input-group">
-                                <img src="/assets/ico/mail-icon.svg" class="ICO">
-                                <input type="email" id="inputEmail3" placeholder="Email" class="form-control"  formControlName="email"/>
+                                <input type="text" id="user" placeholder="Usuario" class="form-control"  formControlName="user"/>
                             </div>
                         </div>
                     </div>
@@ -21,8 +21,7 @@
                     <div class="row mb-3 justify-content-center">
                         <div class="col-sm-11">
                             <div class="input-group">
-                                <img src="/assets/ico/contraseña-ico.svg" class="ICO">
-                                <input type="password" id="inputPassword3"  placeholder="Contraseña" class="form-control" formControlName="password"/>
+                                <input type="password" id="password"  placeholder="Contraseña" class="form-control" formControlName="password"/>
                             </div> 
                         </div>
                     </div><br/>
@@ -37,5 +36,18 @@
                 </div>
             </form>
         </div>
+
+
+        <form [formGroup]="data" *ngIf="showData">
+            <div class="row mb-3 justify-content-center">
+                <div class="col-sm-11">
+                    <button type="submit" class="loginboton">
+                        Cerrar Sesión
+                    </button>
+                </div>
+            </div>
+        </form>
+
+
     </div>
 </div>

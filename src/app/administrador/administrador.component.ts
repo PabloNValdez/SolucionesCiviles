@@ -11,35 +11,40 @@ import { ILoginDto } from '../models/ILoginDto.model';
 })
 export class AdministradorComponent implements OnInit {
   loginForm : FormGroup;
+  data : FormGroup;
   errorMessage: string = '';
   showError: boolean;
   private returnUrl: string;
+  showData: boolean;
 
   constructor(private administradorService: AdministradorService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8)])
+      user: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
     });
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   loginUser(){
     const user: ILoginDto = {
-      email: this.loginForm.value.email,
+      user: this.loginForm.value.user,
       password: this.loginForm.value.password
     };
 
     this.administradorService.login(user).subscribe(data => {
-      sessionStorage.setItem("token", data.token);
       sessionStorage.setItem("user", JSON.stringify(data.user));
-      this.administradorService.sendAuthStateChangeNotification(data.isSuccessful);
+      this.showData = true;
       this.router.navigate([this.returnUrl]);
     }, error => {
       this.errorMessage = error;
       this.showError = true;
     });
+  }
+
+  logout() {
+    this.showData = false;
   }
 
 }

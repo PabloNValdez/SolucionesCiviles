@@ -21,13 +21,4 @@ export class AdministradorService {
     return this.http.post<ILoginDto>(`${API_URL}/api/account/login`, dto);
   }
 
-  loguot() {
-    window.sessionStorage.clear();
-    this.sendAuthStateChangeNotification(false);
-  }
-
-  sendAuthStateChangeNotification(isAuthenticated: boolean) {
-    this.authChangeSub.next(isAuthenticated);
-  }
-
 }
