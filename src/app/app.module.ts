@@ -14,6 +14,7 @@ import { WorksComponent } from './works/works.component';
 import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
 import { ProductsComponent } from './products/products.component';
 import { AdministradorComponent } from './administrador/administrador.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AdministradorComponent } from './administrador/administrador.component'
     AppRoutingModule, 
     HttpClientModule, 
     ReactiveFormsModule,
-    NgImageFullscreenViewModule
+    NgImageFullscreenViewModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

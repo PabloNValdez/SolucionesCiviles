@@ -1,6 +1,9 @@
 import { ArrayType } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { WorksService } from './works.service';
 
+const apiUrl = environment.apiUrl;
 @Component({
   selector: 'app-works',
   templateUrl: './works.component.html',
@@ -15,26 +18,40 @@ export class WorksComponent implements OnInit {
   title: string;
   description: string;
   actualImages:Array<any> = [];
+  datos: Array<any>=[];
 
-  
-  imageObject: Array<object> = [
-    {
-      image:
-        "../../assets/img/Trabajos/Banco Sauce/BancoSauce.jpeg",
-      title: "Banco Sauce"
-    },
-    {
-      image:
-        "../../assets/img/Trabajos/Banco Sauce/BancoSauce_2.jpeg",
-      title: "Banco Sauce"
-    }
-  ];
+  constructor(private trabajoService: WorksService) { }
 
+  ngOnInit():void{
+    this.trabajoService.getAllWorks().subscribe(respose =>{
+      this.datos = respose;
+      respose.forEach(element => {
+        //element.imagesDto[0].path = `${apiUrl}/${element.imagesDto[0].path}`; 
+        
+        var trabajo:Array<any> = [];
 
+        trabajo[0] = element.name;
+        trabajo[1] = element.description;
 
-  constructor() { }
+        var images:Array<object> = [];
 
-  ngOnInit(): void {
+        element.imagesDto.forEach(e =>{
+          var img = decodeURIComponent(`${apiUrl}/${e.path}`);
+          // console.log(img);
+          images.push({image:img});
+        })
+        // console.log(images);
+        trabajo[2]= images;
+        trabajo[3] = element.id;
+        this.listOfworks.push(trabajo);
+        console.log(this.listOfworks);
+        
+      });
+      // this.work = [];
+    });
+  }
+
+  COso(): void {
     // ************Nuevo Trabajo****************
 
     this.title="Banco Sauce"; //Cambiar esto para cada nuevo proyecto

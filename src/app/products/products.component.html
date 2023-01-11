@@ -1,5 +1,16 @@
+
 <div class="container pt-5 pb-5">
-    <div class="row d-flex justify-content-center">
-        <iframe style="width:900px;height:800px" src="https://online.fliphtml5.com/iswiu/brfg/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+    <div class="row d-flex justify-content-center" *ngFor="let cat of datos | paginate: { itemsPerPage: 1, currentPage: p }">
+        <iframe style="width:900px;height:800px" [src]="saniti.bypassSecurityTrustResourceUrl(cat.link) "  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
     </div>
+</div>
+<div class="row d-flex ">
+    <div class="col text-center">
+        <pagination-controls 
+        (pageChange)="p = $event" 
+        previousLabel="Anterior"
+        nextLabel="Siguiente"
+        >
+        </pagination-controls>
+    </div> 
 </div>
