@@ -27,24 +27,26 @@ export class WorksComponent implements OnInit {
       this.datos = respose;
       respose.forEach(element => {
         //element.imagesDto[0].path = `${apiUrl}/${element.imagesDto[0].path}`; 
+        if(!element.isDeleted){
+              var trabajo:Array<any> = [];
+
+            trabajo[0] = element.name;
+            trabajo[1] = element.description;
+
+            var images:Array<object> = [];
+
+            element.imagesDto.forEach(e =>{
+              var img = decodeURIComponent(`${apiUrl}/${e.path}`);
+              // console.log(img);
+              images.push({image:img});
+            })
+            // console.log(images);
+            trabajo[2]= images;
+            trabajo[3] = element.id;
+            this.listOfworks.push(trabajo);
+            console.log(this.listOfworks);
+        }
         
-        var trabajo:Array<any> = [];
-
-        trabajo[0] = element.name;
-        trabajo[1] = element.description;
-
-        var images:Array<object> = [];
-
-        element.imagesDto.forEach(e =>{
-          var img = decodeURIComponent(`${apiUrl}/${e.path}`);
-          // console.log(img);
-          images.push({image:img});
-        })
-        // console.log(images);
-        trabajo[2]= images;
-        trabajo[3] = element.id;
-        this.listOfworks.push(trabajo);
-        console.log(this.listOfworks);
         
       });
       // this.work = [];

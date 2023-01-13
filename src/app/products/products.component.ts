@@ -11,7 +11,8 @@ const apiUrl = environment.apiUrl;
 })
 export class ProductsComponent implements OnInit {
 
-  datos: Array<any>=[];  
+  datos: Array<any>=[];
+  catalogos: Array<any>=[];  
   p: number = 1;
   saniti: DomSanitizer;//Sanitiza los link, para ahcerlos seguros
   constructor(private productsService: ProductsService, private sanitizer: DomSanitizer) { }
@@ -20,6 +21,11 @@ export class ProductsComponent implements OnInit {
     this.saniti= this.sanitizer;
     this.productsService.getAllCatalogos().subscribe(response=>{
       this.datos = response.slice().reverse();
+      this.datos.forEach(element =>{
+        if(!element.isDeleted){
+          this.catalogos.push(element);
+        }
+      });
     });
   }
 
