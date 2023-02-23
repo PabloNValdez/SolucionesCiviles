@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   // apiUrl: 'https://localhost:7073'
-  apiUrl: 'http://www.solucionescivilesapi.somee.com'
+  apiUrl: 'https://solucionesenobrasciviles.com.ar/API'
 };

@@ -1,9 +1,19 @@
+<!--
+<div style="text-align:center;">
+
+    <iframe src="//v.calameo.com/?bkcode=0072801166f80edd8da41&mode=mini" width="980" height="800" frameborder="0" scrolling="no" allowtransparency allowfullscreen style="margin:0 auto;">
+    </iframe>
+
+</div>-->
+
 
 <div class="container pt-5 pb-5">
     <div class="row d-flex justify-content-center" *ngFor="let cat of catalogos | paginate: { itemsPerPage: 1, currentPage: p }">
-        <iframe style="width:900px;height:800px" [src]="saniti.bypassSecurityTrustResourceUrl(cat.link) "  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+        <iframe style="width:1000px;height:800px" [src]="saniti.bypassSecurityTrustResourceUrl(cat.link) "  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" >
+        </iframe>
     </div>
 </div>
+
 <div class="row d-flex ">
     <div class="col text-center">
         <pagination-controls 
