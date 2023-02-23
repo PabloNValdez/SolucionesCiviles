@@ -26,7 +26,6 @@ export class WorksComponent implements OnInit {
     this.trabajoService.getAllWorks().subscribe(respose =>{
       this.datos = respose;
       respose.forEach(element => {
-        //element.imagesDto[0].path = `${apiUrl}/${element.imagesDto[0].path}`; 
         if(!element.isDeleted){
               var trabajo:Array<any> = [];
 
@@ -39,12 +38,19 @@ export class WorksComponent implements OnInit {
               var img = decodeURIComponent(`${apiUrl}/${e.path}`);
               images.push({image:img});
             })
-            trabajo[2]= images;
+
+            if(images.length == 0){
+              var im:Array<object> = [];
+              im.push({image: '../../assets/img/imageNotFound.png'});
+              trabajo[2] = im;
+            }else{
+              trabajo[2]= images;
+            }
+
             trabajo[3] = element.id;
             this.listOfworks.push(trabajo);
         }
       });
-      // this.work = [];
     });
   }
 
