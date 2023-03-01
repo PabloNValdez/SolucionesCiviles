@@ -21,5 +21,11 @@ export class ContactService {
 public sendEmail(dto): Observable<any> {
     return this.http.post(`${apiUrl}/api/email`, dto);
   }
+
+public sendOpinion(dto): Observable<any> {
+    return this.http.post(`${apiUrl}/api/email/opinion`, dto);
+}
+
+
 }
 

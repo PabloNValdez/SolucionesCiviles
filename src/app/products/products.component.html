@@ -1,12 +1,3 @@
-<!--
-<div style="text-align:center;">
-
-    <iframe src="//v.calameo.com/?bkcode=0072801166f80edd8da41&mode=mini" width="980" height="800" frameborder="0" scrolling="no" allowtransparency allowfullscreen style="margin:0 auto;">
-    </iframe>
-
-</div>-->
-
-
 <div class="container pt-5 pb-5">
     <div class="row d-flex justify-content-center" *ngFor="let cat of catalogos | paginate: { itemsPerPage: 1, currentPage: p }">
         <iframe style="width:1000px;height:800px" [src]="saniti.bypassSecurityTrustResourceUrl(cat.link) "  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" >
@@ -24,3 +15,53 @@
         </pagination-controls>
     </div> 
 </div>
+
+<!-- Contacto -->
+<div class="container pb-4">
+    <div class="row text-center">
+        <div class="col">
+            <h2 class="bold pt-5">¿Tenés una opinión sobre la revista? <button (click)="openForm()" class="buttonOpenForm">Escribinos</button></h2>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center pt-5" *ngIf="showForm">
+        <div class="col-12 col-lg-6 contacto">
+
+            <form [formGroup]="questionForm" (ngSubmit)="sendQuestion()">
+                <div class="row mb-3 justify-content-center mt-3">      
+                    <div class="col-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-bottom border-0 input-form shadow-none" id="inputName" formControlName="name" placeholder="Nombre"> 
+                        </div>  
+                        <span class="input-alert" *ngIf="validateControl('name') && hasError('name', 'required')">Debe ingresar el nombre</span>                                     
+                    </div>
+                </div>
+
+                <div class="row mb-3 justify-content-center">
+                    <div class="col-10">
+                        <div class="input-group">
+                            <input type="email" class="form-control border-bottom border-0 input-form shadow-none" id="inputEmai" formControlName="email" placeholder="E-Mail">
+                        </div>
+                        <span class="input-alert" *ngIf="validateControl('email') && hasError('email', 'email')">Ingrese un email válido</span>
+                        <span class="input-alert" *ngIf="validateControl('email') && hasError('email', 'required')">Debe ingresar el email</span>
+                    </div>
+                </div>
+
+                <div class="row mb-3 justify-content-center">
+                    <div class="col-10">
+                        <div class="input-group">
+                            <textarea class="form-control border-bottom border-0 input-form shadow-none" placeholder="Aquí púedes escribir tu opinión o lo que te gustaría leer en la revista" id="inputMessage" rows="4" formControlName="message"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center pb-5 pt-5">
+                    <div class="d-grid  col-10">
+                        <button type="submit" class="btn btn-send justify-content-center" [disabled]="!questionForm.valid">Enviar mensaje</button>
+                    </div>
+                </div>    
+            </form> 
+
+        </div>
+    </div>
+</div><br>

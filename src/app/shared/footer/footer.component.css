@@ -2,24 +2,20 @@
     /* margin-top: 20px; */
     background-color: black;
     background-size: 80% 10%;
-    padding: 0px;
+    padding: 20px 0px;
     text-align: center;
 }
 
-.logo{
-    /* padding-top: 20%; */
-    /* margin-top: 20%; */
-    background-color: white;
-    height: 5em;
-}
+.logo {
+    height: 100%;
+  }
+  
+  .logo img {
+    height: 200px; 
+    width: 200px;
+  }
+  
 
-.socialMedia{
-    padding-top: 7%;
-}
-
-.adresses{
-    padding-top: 7%;
-}
 
 @media (max-width: 600px) {
     .logo {

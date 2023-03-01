@@ -23,7 +23,7 @@
                 con amplia experiencia en todo tipo de proyectos y obras de distinta escala.<br><br>
                 <p>* Atendemos personalmente a nuestros clientes.</p>
                 <p>* Sabemos escuchar e interpretar sus necesidades, deseos y posibilidades.</p>
-                <p>* Nuestra vasta experiencia, mucha dedicación y pasión.</p>
+                <p>* Contamos con vasta experiencia, mucha dedicación y pasión.</p>
                 <p>* Combinamos equilibradamente creatividad y realidad.</p>
             </h4>
         </div>
@@ -32,53 +32,42 @@
 
 <!-- Tarjetitas -->
 
-    <div class="container pb-4 pt-5">
-       <div class="row d-flex justify-content-center">
-            <div class="col-10 col-lg-4 d-flex justify-content-center pb-5">
-                <div class="col tarjetas">
-                    <h3 class="bold text-center pt-3">Misión</h3><br>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-10">
-                            <h5>Somos un equipo de trabajo dedicado a brindar servicios de construcción en diversos rubros. Flexible y ajustable a 
-                                las necesidades de nuestros clientes.</h5>
-                        </div>
-                    </div>
-                    
-                </div> 
+<div class="container pb-4 pt-5">
+    <div class="row d-flex justify-content-center align-items-stretch">
+      <div class="col-10 col-lg-4 d-flex justify-content-center pb-5 flex-grow-1">
+        <div class="col tarjetas h-100">
+          <h3 class="bold text-center pt-3">Misión</h3><br>
+          <div class="row d-flex justify-content-center">
+            <div class="col-10">
+              <h5 class="text-justify">Somos un equipo de trabajo dedicado a brindar servicios de construcción en diversos rubros. Flexible y ajustable a las necesidades de nuestros clientes.</h5>
             </div>
-
-
-            <div class="col-10 col-lg-4 d-flex justify-content-center pb-5">
-                <div class="col tarjetas ">
-                    <h3 class="bold text-center pt-3">Visión</h3><br>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-10">
-                            <h5 >Ser una empresa constructora eficiente en la que los clientes puedan confiar trabajando con honestidad, profesionalismo, calidad, 
-                                competitividad. Siempre respetando los plazos y costos pactados.</h5>
-                        </div>
-                    </div>
-                </div> 
+          </div>
+        </div> 
+      </div>
+      <div class="col-10 col-lg-4 d-flex justify-content-center pb-5 flex-grow-1">
+        <div class="col tarjetas h-100">
+          <h3 class="bold text-center pt-3">Visión</h3><br>
+          <div class="row d-flex justify-content-center">
+            <div class="col-10">
+              <h5 class="text-justify">Ser una empresa constructora eficiente en la que los clientes puedan confiar trabajando con honestidad, profesionalismo, calidad y competitividad. Siempre respetando los plazos y costos pactados.</h5>
             </div>
-
-
-
-            <div class="col-10 col-lg-4 d-flex justify-content-center pb-5">
-                <div class="col tarjetas">
-                    <h3 class="bold text-center pt-3">Compromiso</h3><br>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-10">
-                            <h5>Centramos nuestros objetivos en entregar un producto terminado, en el tiempo estipulado. Se garantiza la seguridad en obra y la
-                                calidad de los trabajos.</h5>
-
-                            <h5>Trabajar y construir con responsabilidad y honestidad. Nuestro equipo, altamente capacitado, trabaja con el enfoque de mejora continúa
-                                para día a día brindar un mejor servicio.</h5>
-                        </div>
-                    </div>                  
-                </div> 
+          </div>
+        </div> 
+      </div>
+      <div class="col-10 col-lg-4 d-flex justify-content-center pb-5 flex-grow-1">
+        <div class="col tarjetas h-100">
+          <h3 class="bold text-center pt-3">Compromiso</h3><br>
+          <div class="row d-flex justify-content-center">
+            <div class="col-10">
+              <h5 class="text-justify">Centramos nuestros objetivos en entregar un producto terminado, en el tiempo estipulado. Se garantiza la seguridad en obra y la calidad de los trabajos.</h5>
+              <h5 class="text-justify">Trabajar y construir con responsabilidad y honestidad. Nuestro equipo trabaja con el enfoque de mejora continúa para día a día brindar un mejor servicio.</h5>
             </div>
-
-        </div>
+          </div>                  
+        </div> 
+      </div>
     </div>
+  </div>
+  
 
     <!-- Contacto -->
     <div class="container contacto pb-4">
@@ -89,13 +78,7 @@
         </div>
         <div class="row d-flex justify-content-center pt-5">
             <div class="col-12 col-lg-6">
-                <!-- <div class="row text-center pb-5 pt-5">
-                    <h3>Mensaje</h3>
-                </div> -->
                 <form [formGroup]="questionForm" (ngSubmit)="sendQuestion()">
-                    <!-- <div *ngIf="showError" class="alert alert-danger" role="alert">
-                        <span [innerHTML]="errorMessage"></span>
-                    </div> -->
                     <div class="row mb-3 justify-content-center mt-3">      
                         <div class="col-10">
                             <div class="input-group">
@@ -107,7 +90,7 @@
                     <div class="row mb-3 justify-content-center">
                         <div class="col-10">
                             <div class="input-group">
-                                <input type="email" class="form-control border-bottom border-0 input-form shadow-none" id="inputEmai" formControlName="email" placeholder="Email">
+                                <input type="email" class="form-control border-bottom border-0 input-form shadow-none" id="inputEmai" formControlName="email" placeholder="E-Mail">
                             </div>
                             <span class="input-alert" *ngIf="validateControl('email') && hasError('email', 'email')">Ingrese un email válido</span>
                             <span class="input-alert" *ngIf="validateControl('email') && hasError('email', 'required')">Debe ingresar el email</span>
@@ -136,7 +119,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-8 pb-4">
                 <p class="fs-2">Disponemos de los medios materiales necesarios para la ejecución de todo tipo de proyectos. </p>
-                <p class="fs-2">Somos una empresa en continúa formación. Innovando, investigando y aplicando siempre las últimas técnicas constructivas.</p>
+                <p class="fs-2">Somos una empresa en continua formación. Innovando, investigando y aplicando siempre las últimas técnicas constructivas.</p>
             </div>
         </div>
     </div>
