@@ -47,7 +47,7 @@ export class ProductsComponent implements OnInit {
       "body":this.questionForm.get('message').value
     }
 
-    this.contactService.sendEmail(values).subscribe(response=>{
+    this.contactService.sendOpinion(values).subscribe(response=>{
         setTimeout(() => {
           this.questionForm.reset();
         }, 100);
