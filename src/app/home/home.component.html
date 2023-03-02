@@ -13,6 +13,8 @@
     </div>
 </div><br>
 
+  
+  
 <div class="container-fluid pb-5 who-we-are">
     <div class="row text-center pt-3">
         <h1 class="bold text-white">¿Quiénes somos?</h1>
@@ -29,6 +31,17 @@
         </div>
     </div>
 </div>
+
+<!-- ----------------- BANNER PUBLICITARIO ---------------------- -->
+<ngb-carousel #myCarousel *ngIf="images">
+	<ng-template ngbSlide *ngFor="let image of images">
+		<div class="picsum-img-wrapper">
+			<img [src]="image" alt="" />
+		</div>
+	</ng-template>
+</ngb-carousel>
+
+<!-- -------------------------------------------------------------- -->
 
 <!-- Tarjetitas -->
 

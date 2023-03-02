@@ -1,16 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ContactService } from '../contact/contact.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  @ViewChild('carousel', { read: ElementRef }) carouselRef: ElementRef | undefined;
   questionForm : FormGroup;
+  images: string[] = [
+    '../../assets/img/P1.jpg',
+    '../../assets/img/P2.jpg',
+    '../../assets/img/P3.jpg'
+  ];
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService, config: NgbCarouselConfig) {
+    config.showNavigationArrows = false; //Flechas para deslizarte en el slider
+		config.showNavigationIndicators = false; 
+   }
 
   ngOnInit(): void {
     this.questionForm = new FormGroup({
@@ -18,6 +28,12 @@ export class HomeComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       message: new FormControl('', [Validators.required]),
     });
+  }
+
+  ngAfterViewInit(): void {
+    if (this.carouselRef) {
+      this.carouselRef.nativeElement.querySelectorAll('.carousel-indicators')[0].remove();
+    }
   }
 
   validateControl = (controlName: string) => {
@@ -34,12 +50,9 @@ export class HomeComponent implements OnInit {
       "body":this.questionForm.get('message').value
     }
 
-
     this.contactService.sendEmail(values).subscribe(response=>{
-      // this.toastr.success(response.message);
         setTimeout(() => {
           this.questionForm.reset();
-          // this.router.navigate(['/dashboard/list-shops-professionals']);
         }, 100);
     }, error =>{
       console.log(error);

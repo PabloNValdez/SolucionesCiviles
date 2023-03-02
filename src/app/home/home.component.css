@@ -75,3 +75,24 @@ textarea{
 .contacto{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+/* SLIDER PUBLICITARIO */
+
+.carousel {
+    overflow: hidden;
+    padding-left: 14%;
+  }
+  
+.slide { /* Control de imágenes publicitarias */
+    display: flex;
+    width: 1700px;
+    height: 220px;
+    transition: transform 0.5s ease-in-out;
+}
+  
+.color-box {
+    width: 50%;
+    height: 100%;
+}
+
+  

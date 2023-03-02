@@ -15,6 +15,8 @@ import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
 import { ProductsComponent } from './products/products.component';
 import { AdministradorComponent } from './administrador/administrador.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
     HttpClientModule, 
     ReactiveFormsModule,
     NgImageFullscreenViewModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgbCarouselModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
