@@ -14,11 +14,6 @@ const apiUrl = environment.apiUrl;
 export class HomeComponent implements OnInit {
   @ViewChild('carousel', { read: ElementRef }) carouselRef: ElementRef | undefined;
   questionForm : FormGroup;
-  images: string[] = [
-    '../../assets/img/P1.jpg',
-    '../../assets/img/P2.jpg',
-    '../../assets/img/P3.jpg'
-  ];
   publiImages: string[] = [];
 
   constructor(private contactService: ContactService, config: NgbCarouselConfig,private homeService: HomeService) {

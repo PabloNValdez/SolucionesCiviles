@@ -83,17 +83,11 @@ textarea{
     /* padding-left: 14%; */
   }
   
-.slide { /* Control de imágenes publicitarias */
-    display: flex;
-    /* width: 1700px; */
-    width: 90%;
-    height: 220px;
-    transition: transform 0.5s ease-in-out;
-}
+.picsum-img-wrapper img {
+    width: 970px;
+    height: 250px;
+  }
   
-.color-box {
-    width: 50%;
-    height: 100%;
-}
+
 
   
