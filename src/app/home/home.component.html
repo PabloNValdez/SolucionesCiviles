@@ -33,13 +33,16 @@
 </div>
 
 <!-- ----------------- BANNER PUBLICITARIO ---------------------- -->
-<ngb-carousel #myCarousel *ngIf="images">
-	<ng-template ngbSlide *ngFor="let image of images">
-		<div class="picsum-img-wrapper">
-			<img [src]="image" alt="" />
-		</div>
-	</ng-template>
-</ngb-carousel>
+<div class="container pt-2 d-flex justify-content-center">
+    <ngb-carousel #myCarousel *ngIf="publiImages">
+        <ng-template ngbSlide *ngFor="let image of publiImages">
+            <div class="picsum-img-wrapper">
+                <img class="img-fluid" [src]="image" alt="" />
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
+
 
 <!-- -------------------------------------------------------------- -->
 

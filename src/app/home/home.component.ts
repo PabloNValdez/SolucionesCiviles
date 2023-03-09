@@ -2,7 +2,10 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ContactService } from '../contact/contact.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { HomeService } from './home.service';
+import { environment } from 'src/environments/environment';
 
+const apiUrl = environment.apiUrl;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,8 +19,9 @@ export class HomeComponent implements OnInit {
     '../../assets/img/P2.jpg',
     '../../assets/img/P3.jpg'
   ];
+  publiImages: string[] = [];
 
-  constructor(private contactService: ContactService, config: NgbCarouselConfig) {
+  constructor(private contactService: ContactService, config: NgbCarouselConfig,private homeService: HomeService) {
     config.showNavigationArrows = false; //Flechas para deslizarte en el slider
 		config.showNavigationIndicators = false; 
    }
@@ -28,6 +32,8 @@ export class HomeComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       message: new FormControl('', [Validators.required]),
     });
+
+    this.loadPublicidades();
   }
 
   ngAfterViewInit(): void {
@@ -57,6 +63,19 @@ export class HomeComponent implements OnInit {
     }, error =>{
       console.log(error);
     });
+  }
+
+  loadPublicidades(){
+    this.homeService.getAllPubliImages().subscribe(response =>{
+      console.log(response);
+      response.forEach(element=>{
+        if(!element.isDeleted){
+          var img = decodeURIComponent(`${apiUrl}/${element.path}`);
+          this.publiImages.push(img);
+          // console.log(this.publiImages);
+        } 
+      })
+    })
   }
 
 }

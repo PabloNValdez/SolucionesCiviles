@@ -80,12 +80,13 @@ textarea{
 
 .carousel {
     overflow: hidden;
-    padding-left: 14%;
+    /* padding-left: 14%; */
   }
   
 .slide { /* Control de imágenes publicitarias */
     display: flex;
-    width: 1700px;
+    /* width: 1700px; */
+    width: 90%;
     height: 220px;
     transition: transform 0.5s ease-in-out;
 }
